@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#06101a">
+  <title>ROBO RUN 3D</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="importmap">
+  {"imports":{
+    "three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+  </script>
+</head>
+<body>
+  <main class="app">
+    <header class="hud">
+      <div class="logo"><span class="logo-mark">R</span><span>ROBO<span class="cyan">RUN</span><small>3D / PROTOCOLO DE FUGA</small></span></div>
+      <div class="meters">
+        <div><small>DISTÂNCIA</small><b id="distance">00000</b></div>
+        <div><small>ENERGIA</small><b>◆ <span id="energy">0</span></b></div>
+        <div><small>RECORDE</small><b id="best">00000</b></div>
+      </div>
+      <button id="pause" class="pause" aria-label="Pausar">Ⅱ</button>
+    </header>
+    <section class="viewport">
+      <div id="scene"></div>
+      <div class="vignette"></div>
+      <div class="speed"><span class="pulse"></span> SISTEMA ONLINE <b id="speed">0 KM/H</b></div>
+      <div class="combo" id="combo"></div>
+      <div class="powers" id="powers"></div>
+      <div class="banner" id="banner"><small id="bannerTag">SETOR</small><h3 id="bannerName"></h3><p id="bannerSub"></p></div>
+      <div class="toast" id="toast"></div>
+      <div class="center-message" id="startScreen">
+        <div class="tag">UNIDADE R-07 // PROTOCOLO DE FUGA</div>
+        <h1>ROBO<span>RUN</span><i>3D</i></h1>
+        <p>Fuja pela fábrica, data center, armazém autônomo e laboratório de IA.<br>Desvie, salte, deslize e colete núcleos de energia.</p>
+        <button id="start" class="start">INICIAR SIMULAÇÃO <span>↗</span></button>
+        <div class="controls"><span>← → <b>MOVER</b></span><span>↑ <b>PULAR</b></span><span>↓ <b>DESLIZAR</b></span><span>P <b>PAUSA</b></span></div>
+      </div>
+      <div class="center-message hidden" id="pauseScreen">
+        <div class="tag">SIMULAÇÃO SUSPENSA</div><h2>PAUSADO</h2><p>O sistema está aguardando seu comando.</p>
+        <button id="resume" class="start">CONTINUAR <span>▶</span></button>
+      </div>
+      <div class="center-message hidden" id="endScreen">
+        <div class="tag danger">CONEXÃO INTERROMPIDA</div><h2>FIM DE JOGO</h2>
+        <p>Distância: <b id="finalDistance">0</b> m · Energia: <b id="finalEnergy">0</b> · Setor: <b id="finalBiome">-</b></p>
+        <button id="again" class="start">REINICIAR <span>↻</span></button>
+      </div>
+      <div class="bottom-hint">CAIXAS: TROQUE DE PISTA · BARREIRAS: PULE · RAIOS LASER: DESLIZE</div>
+    </section>
+    <footer><span>RENDERIZAÇÃO WEBGL</span><span>CONTROLES: TECLADO / TOQUE</span><span>BUILD 0.3.0</span></footer>
+  </main>
+  <script type="module" src="../js/main.js"></script>
+</body>
+</html>
